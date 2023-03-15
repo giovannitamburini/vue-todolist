@@ -30,6 +30,15 @@
             </li>
         </ul>
 
+        <br>
+        <hr>
+        <br>
+
+        <!-- aggiungo  un campo di input e ciò che scriverò all'interno sarà il text di un nuovo elemento della lista-->
+        <input type="text" v-model="newTodo.text">
+        <!-- aggiungo un bottone tramite cui inserirò nell'array 'todos' un nuovo todo creato tramite funzione 'addNewTodo' con il testo preso da ciò che è stato inserito dall'utente nel campo di input -->
+        <button @click="addNewTodo()">aggiungi alla lista</button>
+
     </div>
 
 

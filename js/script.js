@@ -17,7 +17,9 @@ createApp({
                     done: false
                 }
 
-            ]
+            ],
+
+            newTodo: {},
         }
 
     },
@@ -28,7 +30,16 @@ createApp({
         // funzione per eliminare il 'text' inserito dentro un li della lista
         cancelTodo(index) {
             this.todos.splice(index, 1);
-        }
+        },
+
+        // funzione per aggiungere 'newTodo' al mio array 'todos'
+        addNewTodo() {
+            this.todos.push(this.newTodo);
+            this.newTodo = {
+                text: '',
+                done: false
+            };
+        },
 
     }
 
