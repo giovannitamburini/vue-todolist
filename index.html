@@ -22,7 +22,7 @@
             <!-- creo un li per ogni oggetto contenuto in 'todos' e sbarro il testo se la proprietà 'done' è true -->
             <li v-for='(todo, indexTodos) in todos'>
                 <!-- inserisco il valore (stringa) dell'oggetto 'i' di todos -->
-                <span v-bind:class="todos[indexTodos].done == true ? 'strike': '' ">
+                <span v-bind:class="todos[indexTodos].done == true ? 'strike': '' " @click="todos[indexTodos].done == true ? todos[indexTodos].done = false : todos[indexTodos].done = true">
                     {{todo.text}}
                 </span>
                 <!-- aggiungo un evento click che elimina l'elemento dalla lista -->

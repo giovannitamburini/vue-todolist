@@ -16,14 +16,11 @@ createApp({
                     text: 'andare in farmacia',
                     done: false
                 }
-
             ],
 
             newTodo: {},
         }
-
     },
-
 
     methods: {
 
@@ -40,8 +37,6 @@ createApp({
                 done: false
             };
         },
-
     }
-
 
 }).mount('#app')
