@@ -11,9 +11,20 @@
 <body>
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    
 
-    <div id="app">{{ message }}</div>
+
+    <div id="app">
+
+        <!-- creo un lista -->
+        <ul id="container-todo">
+            <!-- creo un li per ogni oggetto contenuto in 'todos' e sbarro il testo se la proprietà 'done' è true -->
+            <li v-for='(todo, indexTodos) in todos' v-bind:class="todos[indexTodos].done == false ? 'strike': '' ">
+                <!-- inserisco il valore (stringa) dell'oggetto 'i' di todos -->
+                {{todo.text}}
+            </li>
+        </ul>
+
+    </div>
 
 
     <script src="js/script.js"></script>
