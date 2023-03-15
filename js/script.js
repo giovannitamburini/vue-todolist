@@ -20,5 +20,17 @@ createApp({
             ]
         }
 
+    },
+
+
+    methods: {
+
+        // funzione per eliminare il 'text' inserito dentro un li della lista
+        cancelTodo(index) {
+            this.todos.splice(index, 1);
+        }
+
     }
+
+
 }).mount('#app')

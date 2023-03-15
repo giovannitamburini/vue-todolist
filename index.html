@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue todolist</title>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -18,9 +20,13 @@
         <!-- creo un lista -->
         <ul id="container-todo">
             <!-- creo un li per ogni oggetto contenuto in 'todos' e sbarro il testo se la proprietà 'done' è true -->
-            <li v-for='(todo, indexTodos) in todos' v-bind:class="todos[indexTodos].done == false ? 'strike': '' ">
+            <li v-for='(todo, indexTodos) in todos'>
                 <!-- inserisco il valore (stringa) dell'oggetto 'i' di todos -->
-                {{todo.text}}
+                <span v-bind:class="todos[indexTodos].done == false ? 'strike': '' ">
+                    {{todo.text}}
+                </span>
+                <!-- aggiungo un evento click che elimina l'elemento dalla lista -->
+                <span @click="cancelTodo(indexTodos)" ><i class="fa-regular fa-circle-xmark"></i></span>
             </li>
         </ul>
 
