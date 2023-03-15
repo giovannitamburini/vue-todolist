@@ -22,7 +22,7 @@
             <!-- creo un li per ogni oggetto contenuto in 'todos' e sbarro il testo se la proprietà 'done' è true -->
             <li v-for='(todo, indexTodos) in todos'>
                 <!-- inserisco il valore (stringa) dell'oggetto 'i' di todos -->
-                <span v-bind:class="todos[indexTodos].done == false ? 'strike': '' ">
+                <span v-bind:class="todos[indexTodos].done == true ? 'strike': '' ">
                     {{todo.text}}
                 </span>
                 <!-- aggiungo un evento click che elimina l'elemento dalla lista -->
@@ -35,7 +35,8 @@
         <br>
 
         <!-- aggiungo  un campo di input e ciò che scriverò all'interno sarà il text di un nuovo elemento della lista-->
-        <input type="text" v-model="newTodo.text">
+        <!-- aggiungo il bonus 1: premendo enter aggiungo l'elemento alla lista -->
+        <input @keyup.enter="addNewTodo()" v-model="newTodo.text" type="text">
         <!-- aggiungo un bottone tramite cui inserirò nell'array 'todos' un nuovo todo creato tramite funzione 'addNewTodo' con il testo preso da ciò che è stato inserito dall'utente nel campo di input -->
         <button @click="addNewTodo()">aggiungi alla lista</button>
 
