@@ -31,11 +31,14 @@ createApp({
 
         // funzione per aggiungere 'newTodo' al mio array 'todos'
         addNewTodo() {
+            
             this.todos.push(this.newTodo);
+            
             this.newTodo = {
                 text: '',
                 done: false
             };
+            
         },
     }
 
