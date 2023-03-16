@@ -22,6 +22,8 @@ createApp({
                 text: '',
                 done: false
             },
+
+            // newTodoError: '',
         }
     },
 
@@ -34,6 +36,13 @@ createApp({
 
         // funzione per aggiungere 'newTodo' al mio array 'todos'
         addNewTodo() {
+
+            // if (newTodo.text == '') {
+            //     this.newTodoError = 'non puoi aggiungere un campo vuoto';
+            //     return false
+            // } else {
+            //     this.newTodoError = '';
+            // }
             
             this.todos.push(this.newTodo);
 
@@ -62,7 +71,7 @@ createApp({
         oppure 
 
         toggleTodo(index) {
-            
+
             this.todos[todo.index].done = !this.todos[todo.index].done;
         }
         */
