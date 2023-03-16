@@ -18,7 +18,10 @@ createApp({
                 }
             ],
 
-            newTodo: {},
+            newTodo: {
+                text: '',
+                done: false
+            },
         }
     },
 
@@ -33,13 +36,36 @@ createApp({
         addNewTodo() {
             
             this.todos.push(this.newTodo);
-            
+
             this.newTodo = {
                 text: '',
                 done: false
             };
-            
         },
+
+        /*
+        toggleTodo(todo) {
+
+            FORMA ESTESA:
+
+            if (todo.done == false) {
+                todo.done = true;
+            } else {
+                todo.done = false;
+            }
+
+            FORMA CONTRATTA:
+
+            todo.done = !todo.done;
+        }
+
+        oppure 
+
+        toggleTodo(index) {
+            
+            this.todos[todo.index].done = !this.todos[todo.index].done;
+        }
+        */
     }
 
 }).mount('#app')

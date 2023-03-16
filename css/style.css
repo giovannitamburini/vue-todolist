@@ -46,6 +46,7 @@ body {
 #container-todo li #remove-xmark {
     padding-left: 0.5em;
     color: red;
+    cursor: pointer;
 }
 
 input {
